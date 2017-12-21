@@ -18,6 +18,7 @@ end
 
 # Centerville
 org = Organization.create(name: 'Centerville')
+org.users.create(role: 'admin', email: 'user@example.com', password: 'password')
 puts org.name
 pool = org.pools.create(name: 'Business License')
 puts pool.name
