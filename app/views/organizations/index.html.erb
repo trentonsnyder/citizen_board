@@ -1,0 +1,11 @@
+<div>
+  <div>
+    <%= link_to 'Log In', user_session_path %>
+    <%= link_to 'Sign Up', new_user_registration_path %>
+  </div>
+  <div>
+    <% @organizations.each do |org| %>
+      <%= link_to "#{org.name}", organization_path(org.slug), class: 'primary-button' %>
+    <% end %>
+  </div>
+</div>

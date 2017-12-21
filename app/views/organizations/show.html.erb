@@ -1,0 +1,15 @@
+<div>
+  <h3><%= @organization.name %></h3>
+  <%= form_tag organization_path(@organization.id), :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+  <% end %>
+  <div>
+    <h2>Results</h2>
+    <% @tickets.each do |ticket| %>
+      <%= link_to "#{ticket.public_label}", ticket_path(@organization.slug, ticket.id), class: 'primary-button' %>
+    <% end %>
+  </div>
+</div>

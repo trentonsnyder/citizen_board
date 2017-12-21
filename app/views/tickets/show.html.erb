@@ -1,0 +1,12 @@
+<div>
+  <%= link_to "back", organization_path(@organization.slug), class: 'primary-button' %>
+  <h4><%= @pool.name %></h4>
+  <h3><%= @ticket.public_label %></h3>
+  <% @lanes.each do |lane| %>
+    <% if lane.id == @ticket.lane_id %>
+      <h3><%= lane.name %></h3>
+    <% else %>
+      <p><%= lane.name %></p>
+    <% end %>
+  <% end %>
+</div>
