@@ -1,13 +1,13 @@
-<div>
-  <%= link_to "back", auth_organization_path(@organization.id), class: 'primary-button' %>
-  <div>
-    <% @lanes.each do |lane| %>
-      <h4><%= lane.name %></h4>
+<%= link_to "back", auth_organization_path(@organization.id), class: 'primary-button' %>
+<div class='lanes-container'>
+  <% @lanes.each do |lane| %>
+    <div class='lane'>
+    <h4><%= lane.name %></h4>
       <% lane.tickets.each do |ticket| %>
-        <div>
-          <p><%= ticket.public_label %></p>
-        <div>
+        <p><%= ticket.public_label %></p>
+        <p><%= ticket.nickname %></p>
+        <br />
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
