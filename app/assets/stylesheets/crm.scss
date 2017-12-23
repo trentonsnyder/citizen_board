@@ -1,0 +1,22 @@
+.lanes-container {
+  display: flex;
+  justify-content: flex-start;
+  .lane {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+}
+
+.pools-page {
+  .pools-container {
+    display: flex;
+    justify-content: space-around;
+  
+  }
+  
+  .pools-nav {
+    display: flex;
+    justify-content: space-between;
+  }
+}

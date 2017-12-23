@@ -1,0 +1,7 @@
+<%= link_to 'Back', auth_organization_path(@organization.id) %>
+<div>
+  <%= simple_form_for [:auth, @pool] do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

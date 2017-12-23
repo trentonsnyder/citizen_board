@@ -9,7 +9,7 @@
   <div>
     <h2>Results</h2>
     <% @tickets.each do |ticket| %>
-      <%= link_to "#{ticket.public_label}", ticket_path(@organization.slug, ticket.id), class: 'primary-button' %>
+      <%= link_to "#{ticket.public_label}", ticket_path(@organization.slug, ticket.slug), class: 'primary-button' %>
     <% end %>
   </div>
 </div>

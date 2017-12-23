@@ -47,9 +47,13 @@ ActiveRecord::Schema.define(version: 20171220234246) do
   create_table "tickets", force: :cascade do |t|
     t.string "public_label"
     t.string "nickname"
+    t.string "email", default: "", null: false
+    t.string "slug", null: false
+    t.bigint "organization_id"
     t.bigint "pool_id"
     t.bigint "lane_id"
     t.index ["lane_id"], name: "index_tickets_on_lane_id"
+    t.index ["organization_id"], name: "index_tickets_on_organization_id"
     t.index ["pool_id"], name: "index_tickets_on_pool_id"
   end
 

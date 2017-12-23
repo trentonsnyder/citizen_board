@@ -10,7 +10,7 @@ superAdmin = seaOrg.users.create(role: 'super-admin', email: 'admin@seaorg.com',
     rand(4..7).times do
       lane = pool.lanes.create(name: Faker::LordOfTheRings.location)
       rand(0..10).times do
-        lane.tickets.create(pool_id: pool.id, nickname: Faker::DragonBall.character)
+        lane.tickets.create(pool_id: pool.id, organization_id: org.id, nickname: Faker::DragonBall.character, email: Faker::Internet.email)
       end
     end
   end
@@ -28,6 +28,6 @@ lane = pool.lanes.create(name: '2nd Review')
 lane = pool.lanes.create(name: 'Completed')
 pool.lanes.each do |lane|
   rand(2..10).times do
-    lane.tickets.create(pool_id: pool.id, nickname: Faker::DragonBall.character)
+    lane.tickets.create(pool_id: pool.id, organization_id: org.id, nickname: Faker::DragonBall.character, email: Faker::Internet.email)
   end
 end

@@ -1,8 +1,12 @@
-<div>
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete %> 
-  <h3><%= @organization.name %></h3>
-  <% @pools.each do |pool| %>
-    <%= link_to "#{pool.name}", auth_pool_path(pool.id), class: 'primary-button' %>
-    <hr />
-  <% end %>
+<div class='pools-page'>
+  <div class="pools-nav">
+    <h3><%= @organization.name %></h3>
+    <%= link_to 'New Pool', new_auth_pool_path %>
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+  </div>
+  <div class="pools-container">
+    <% @pools.each do |pool| %>
+      <%= link_to "#{pool.name}", auth_pool_path(pool.id), class: 'primary-button' %>
+    <% end %>
+  </div>
 </div>
