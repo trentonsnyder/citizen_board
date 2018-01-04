@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20171220234246) do
 
   create_table "lanes", force: :cascade do |t|
     t.string "name"
+    t.integer "position"
     t.bigint "pool_id"
     t.index ["pool_id"], name: "index_lanes_on_pool_id"
   end

@@ -5,10 +5,10 @@ superAdmin = seaOrg.users.create(role: 'super-admin', email: 'admin@seaorg.com',
   org = Organization.create(name: Faker::Space.constellation)
   puts org.name
   rand(2..4).times do
-    pool = org.pools.create(name: Faker::HarryPotter.location)
+    pool = org.pools.create(name: Faker::Ancient.god)
     puts pool.name
     rand(4..7).times do
-      lane = pool.lanes.create(name: Faker::LordOfTheRings.location)
+      lane = pool.lanes.create(name: Faker::Book.title)
       rand(0..10).times do
         lane.tickets.create(pool_id: pool.id, organization_id: org.id, nickname: Faker::DragonBall.character, email: Faker::Internet.email)
       end
@@ -16,8 +16,8 @@ superAdmin = seaOrg.users.create(role: 'super-admin', email: 'admin@seaorg.com',
   end
 end
 
-# Centerville
-org = Organization.create(name: 'Centerville')
+# Amityville
+org = Organization.create(name: 'Amityville')
 org.users.create(role: 'admin', email: 'user@example.com', password: 'password')
 puts org.name
 pool = org.pools.create(name: 'Business License')

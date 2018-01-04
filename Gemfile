@@ -4,6 +4,7 @@ gem 'rails', '~> 5.1.4'
 gem 'devise'
 gem 'pg', '~> 0.18'
 
+gem 'acts_as_list', '~> 0.7.2'
 gem 'coupon_code'
 gem 'friendly_id', '~> 5.1.0'
 gem 'jbuilder', '~> 2.5'

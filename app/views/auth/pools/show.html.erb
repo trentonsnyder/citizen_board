@@ -1,12 +1,26 @@
-<%= link_to "back", auth_organization_path(@organization.id), class: 'primary-button' %>
+<%= link_to "Back", auth_organization_path(@organization.id), class: 'primary-button' %>
 <%= link_to "New Ticket", new_auth_pool_ticket_path(@pool.id), class: 'primary-button' %>
 <div class='lanes-container'>
   <% @lanes.each do |lane| %>
     <div class='lane'>
-    <h4><%= lane.name %></h4>
+      <div class ='lane-header'>
+        <%= link_to "L", move_left_auth_pool_lane_path(@pool.id, lane.id), method: :post %>
+        <h4><%= lane.name %></h4>
+        <%= link_to "R", move_right_auth_pool_lane_path(@pool.id, lane.id), method: :post %>
+      </div>
       <% lane.tickets.each do |ticket| %>
-        <p><%= ticket.public_label %></p>
-        <p><%= ticket.nickname %></p>
+        <div class='ticket-container'>
+          <div class='ticket-column'>
+            <%= link_to "L", move_left_auth_pool_ticket_path(@pool.id, ticket.id), method: :post %>
+          </div>
+          <div>
+            <p><%= ticket.public_label %></p>
+            <p><%= ticket.nickname %></p>
+          </div>
+          <div>
+            <%= link_to "R", move_right_auth_pool_ticket_path(@pool.id, ticket.id), method: :post %>
+          </div>
+        </div>
       <% end %>
     </div>
   <% end %>

@@ -1,5 +1,5 @@
 <div>
-  <%= link_to "back", organization_path(@organization.slug), class: 'primary-button' %>
+  <%= link_to "back", :back %>
   <h4><%= @pool.name %></h4>
   <h3><%= @ticket.public_label %></h3>
   <% @lanes.each do |lane| %>

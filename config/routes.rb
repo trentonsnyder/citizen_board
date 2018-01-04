@@ -7,7 +7,18 @@ Rails.application.routes.draw do
   namespace :auth do
     resources :organizations, only: [:show]
     resources :pools, only: [:show, :new, :create] do
-      resources :tickets
+      resources :lanes do
+        member do
+          post 'move_left'
+          post 'move_right'
+        end
+      end
+      resources :tickets do
+        member do
+          post 'move_left'
+          post 'move_right'
+        end
+      end
     end
   end
 end

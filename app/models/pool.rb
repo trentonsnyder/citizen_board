@@ -1,6 +1,6 @@
 class Pool < ApplicationRecord
   belongs_to :organization
-  has_many :lanes, dependent: :destroy
+  has_many :lanes, -> { order(position: :asc) }, dependent: :destroy
   has_many :tickets, dependent: :destroy
 
   validates :name,

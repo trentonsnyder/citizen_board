@@ -21,10 +21,6 @@ class Auth::PoolsController < Auth::AuthenticatedController
 
   private
 
-  def set_organization
-    @organization = current_user.organization
-  end
-
   def pool_params
     params.require(:pool).permit(:name)
   end

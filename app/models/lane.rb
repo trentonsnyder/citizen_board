@@ -1,5 +1,7 @@
 class Lane < ApplicationRecord
   belongs_to :pool
+  acts_as_list scope: :pool
+
   has_many :tickets, dependent: :destroy
 
   before_destroy :minimum_one_lane, prepend: true
