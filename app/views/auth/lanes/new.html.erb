@@ -1,0 +1,7 @@
+<%= link_to 'Back', auth_pool_path(@pool.id) %>
+<div>
+  <%= simple_form_for [:auth, :pool, @lane] do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

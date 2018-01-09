@@ -1,5 +1,6 @@
 <%= link_to "Back", auth_organization_path(@organization.id), class: 'primary-button' %>
 <%= link_to "New Ticket", new_auth_pool_ticket_path(@pool.id), class: 'primary-button' %>
+<%= link_to "New Lane", new_auth_pool_lane_path(@pool.id), class: 'primary-button' %>
 <div class='lanes-container'>
   <% @lanes.each do |lane| %>
     <div class='lane'>

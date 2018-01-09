@@ -12,7 +12,7 @@
     align-items: center;
     .lane-header {
       display: flex;
-      flex-direction: space-between;
+      justify-content: space-between;
     }
     .ticket-container {
       border: 1px solid black;
