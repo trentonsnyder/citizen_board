@@ -9,9 +9,9 @@ class Ticket < ApplicationRecord
 
   extend FriendlyId
   friendly_id :public_label, use: :slugged
-  
+
   before_validation :generate_label, :on => :create, prepend: true
-  
+
   def generate_label
     self.public_label = CouponCode.generate
   end

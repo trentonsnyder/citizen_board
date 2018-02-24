@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-  
+
   def index
     @organizations = Organization.all
   end
@@ -15,5 +15,5 @@ class OrganizationsController < ApplicationController
         limit(20)
     end
   end
-  
+
 end

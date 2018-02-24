@@ -17,15 +17,15 @@ superAdmin = seaOrg.users.create(role: 'super-admin', email: 'admin@seaorg.com',
 end
 
 # Amityville
+puts 'Amityville'
 org = Organization.create(name: 'Amityville')
 org.users.create(role: 'admin', email: 'user@example.com', password: 'password')
-puts org.name
 pool = org.pools.create(name: 'Business License')
-puts pool.name
-lane = pool.lanes.create(name: 'Application Received')
-lane = pool.lanes.create(name: 'Examination')
-lane = pool.lanes.create(name: '2nd Review')
-lane = pool.lanes.create(name: 'Completed')
+laneBank = ['Application Received',
+            'Examination',
+            '2nd Review',
+            'Completed']
+laneBank.each { |name| pool.lanes.create(name: name) }
 pool.lanes.each do |lane|
   rand(2..10).times do
     lane.tickets.create(pool_id: pool.id, organization_id: org.id, nickname: Faker::DragonBall.character, email: Faker::Internet.email)

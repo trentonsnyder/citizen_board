@@ -1,6 +1,6 @@
 <div>
   <h3><%= @organization.name %></h3>
-  <%= form_tag organization_path(@organization.id), :method => 'get' do %>
+  <%= form_tag organization_path(@organization.slug), :method => 'get' do %>
     <p>
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag "Search", :name => nil %>
